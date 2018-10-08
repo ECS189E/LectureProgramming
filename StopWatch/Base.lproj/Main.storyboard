@@ -50,8 +50,11 @@
                                 <state key="normal" title="Lap">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="lapClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hea-iu-vtt"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnN-ry-xnq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnN-ry-xnq">
                                 <rect key="frame" x="16" y="86" width="343" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="rIY-07-BHG"/>
@@ -60,6 +63,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="WoK-df-kvE">
+                                <rect key="frame" x="16" y="164" width="343" height="474"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Hbq-nP-0O9"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="rp3-fv-fw1"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -67,16 +78,22 @@
                             <constraint firstItem="oec-PD-a3v" firstAttribute="top" secondItem="lw1-Lx-ER6" secondAttribute="bottom" constant="8" id="Fya-Zp-Aor"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XnN-ry-xnq" secondAttribute="trailing" constant="16" id="GZN-3M-LJR"/>
                             <constraint firstItem="XnN-ry-xnq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="JbX-CF-9KU"/>
+                            <constraint firstItem="WoK-df-kvE" firstAttribute="top" secondItem="XnN-ry-xnq" secondAttribute="bottom" constant="8" id="K9z-BE-45q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oec-PD-a3v" secondAttribute="bottom" constant="40" id="Kbm-JB-T3p"/>
                             <constraint firstItem="lw1-Lx-ER6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Lgj-Qn-X92"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lw1-Lx-ER6" secondAttribute="trailing" constant="16" id="NAB-H5-qGe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oec-PD-a3v" secondAttribute="trailing" constant="16" id="Tgh-yk-fCR"/>
                             <constraint firstItem="XnN-ry-xnq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="V3z-vS-qcO"/>
+                            <constraint firstItem="lw1-Lx-ER6" firstAttribute="top" secondItem="WoK-df-kvE" secondAttribute="bottom" constant="8" id="Y9F-re-phd"/>
+                            <constraint firstItem="WoK-df-kvE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="sib-Oy-Q51"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WoK-df-kvE" secondAttribute="trailing" constant="16" id="xvR-Tb-eaa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="elapsedTimeLabel" destination="XnN-ry-xnq" id="Kuy-3A-37z"/>
                         <outlet property="startButton" destination="oec-PD-a3v" id="Uhx-Cw-W0U"/>
+                        <outlet property="tableView" destination="WoK-df-kvE" id="oZe-mW-dFs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
