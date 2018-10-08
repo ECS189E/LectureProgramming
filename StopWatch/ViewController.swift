@@ -8,12 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UpdateTime {
+    func timeUpdated(_ interval: TimeInterval) {
+        // set our label
+    }
+    
 
+    let timer = TimerModel()
+    
     @IBOutlet weak var startButton: UIButton!
     
     @IBAction func startClick() {
         self.toggleButton(withTitles: ("Start", "Stop"), on: self.startButton)
+        self.timer.startTimer()
     }
     
     func toggleButton(withTitles titles: (String, String), on button: UIButton) {
@@ -23,7 +30,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.timer.updateDelegate = self
     }
 
 
