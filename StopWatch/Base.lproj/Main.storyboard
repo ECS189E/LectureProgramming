@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StopWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
                             <userLayoutGuide location="717" affinity="minY"/>
@@ -27,7 +27,7 @@
                         </userGuides>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oec-PD-a3v">
-                                <rect key="frame" x="16" y="696" width="343" height="42"/>
+                                <rect key="frame" x="16" y="780" width="382" height="42"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="XC8-ZC-f09"/>
@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lw1-Lx-ER6">
-                                <rect key="frame" x="16" y="646" width="343" height="42"/>
+                                <rect key="frame" x="16" y="730" width="382" height="42"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="mPx-GR-Ncv"/>
@@ -51,27 +51,39 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnN-ry-xnq">
-                                <rect key="frame" x="16" y="86" width="343" height="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnN-ry-xnq">
+                                <rect key="frame" x="16" y="84" width="382" height="51"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="rIY-07-BHG"/>
+                                    <constraint firstAttribute="height" constant="51" id="8Sp-5Y-NP0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vhz-bg-z45">
+                                <rect key="frame" x="0.0" y="143" width="414" height="567"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Uo0-iw-yFC"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="bOO-1e-dhm"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oec-PD-a3v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="CjH-QK-VTP"/>
                             <constraint firstItem="oec-PD-a3v" firstAttribute="top" secondItem="lw1-Lx-ER6" secondAttribute="bottom" constant="8" id="Fya-Zp-Aor"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XnN-ry-xnq" secondAttribute="trailing" constant="16" id="GZN-3M-LJR"/>
-                            <constraint firstItem="XnN-ry-xnq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="JbX-CF-9KU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XnN-ry-xnq" secondAttribute="trailing" constant="16" id="KHM-PI-KHW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oec-PD-a3v" secondAttribute="bottom" constant="40" id="Kbm-JB-T3p"/>
                             <constraint firstItem="lw1-Lx-ER6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Lgj-Qn-X92"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lw1-Lx-ER6" secondAttribute="trailing" constant="16" id="NAB-H5-qGe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oec-PD-a3v" secondAttribute="trailing" constant="16" id="Tgh-yk-fCR"/>
-                            <constraint firstItem="XnN-ry-xnq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="V3z-vS-qcO"/>
+                            <constraint firstItem="XnN-ry-xnq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="XGT-Jz-4iK"/>
+                            <constraint firstItem="Vhz-bg-z45" firstAttribute="top" secondItem="XnN-ry-xnq" secondAttribute="bottom" constant="8" id="fa1-CW-a0A"/>
+                            <constraint firstItem="Vhz-bg-z45" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iiI-b9-QQM"/>
+                            <constraint firstItem="XnN-ry-xnq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="kbi-HT-lZR"/>
+                            <constraint firstItem="lw1-Lx-ER6" firstAttribute="top" secondItem="Vhz-bg-z45" secondAttribute="bottom" constant="20" id="vDF-Nl-P24"/>
+                            <constraint firstItem="Vhz-bg-z45" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vGV-7L-zd9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

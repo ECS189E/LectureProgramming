@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UpdateTime {
     func timeUpdated(_ interval: TimeInterval) {
-        // set our label
+        print(interval)
     }
     
 

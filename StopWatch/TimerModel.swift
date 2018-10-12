@@ -31,9 +31,12 @@ class TimerModel {
     
     func startTimer() -> Void {
         self.startTime = Date()
-        self.timer = Timer(timeInterval: 0.01, repeats: true, block: { (_) in
+        // don't worry about runloop details, we'll talk about it later
+        let timer = Timer(timeInterval: 0.01, repeats: true, block: { (_) in
             let elapsedTime = self.timeSinceStart()
             self.updateDelegate.map { $0.timeUpdated(elapsedTime) }
         })
+        self.timer = timer
+        RunLoop.current.add(timer, forMode: .default)
     }
 }
