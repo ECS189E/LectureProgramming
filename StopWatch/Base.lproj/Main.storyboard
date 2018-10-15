@@ -50,6 +50,9 @@
                                 <state key="normal" title="Lap">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="lapButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="xjX-oc-v0f"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnN-ry-xnq">
                                 <rect key="frame" x="16" y="84" width="382" height="51"/>
@@ -89,6 +92,7 @@
                     </view>
                     <connections>
                         <outlet property="startButton" destination="oec-PD-a3v" id="Uhx-Cw-W0U"/>
+                        <outlet property="timeDisplayLabel" destination="XnN-ry-xnq" id="eIn-nt-Wvp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

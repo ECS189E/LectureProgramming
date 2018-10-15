@@ -10,12 +10,16 @@ import Foundation
 
 protocol UpdateTime {
     func timeUpdated(_ interval: TimeInterval)
+    func lapsUpdated(_ laps: [TimeInterval])
 }
 
 class TimerModel {
     var updateDelegate: UpdateTime?
     var startTime: Date?
     var timer: Timer?
+    var lapTime: Date?
+    
+    var laps: [TimeInterval] = []
     
     init() {
     }
@@ -27,6 +31,22 @@ class TimerModel {
         }
         
         return Date().timeIntervalSince(startTime)
+    }
+    
+    func lap() -> Void {
+        guard let startTime = self.startTime else {
+            return
+        }
+        
+        let now = Date()
+        let baseTime = self.lapTime ?? startTime
+        let interval = now.timeIntervalSince(baseTime)
+        self.laps.append(interval)
+        
+        // we'll talk about this in detail later
+        DispatchQueue.main.async {
+            self.updateDelegate?.lapsUpdated(self.laps)
+        }
     }
     
     func startTimer() -> Void {
