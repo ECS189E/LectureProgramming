@@ -12,6 +12,7 @@
 		3B9C67D62162808C00254F3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B9C67D42162808C00254F3B /* Main.storyboard */; };
 		3B9C67D82162808D00254F3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B9C67D72162808D00254F3B /* Assets.xcassets */; };
 		3B9C67DB2162808D00254F3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B9C67D92162808D00254F3B /* LaunchScreen.storyboard */; };
+		3BBC0AD8217799AA008A90E2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBC0AD7217799AA008A90E2 /* SettingsViewController.swift */; };
 		3BCCD4AB216BC0D100A4A688 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCCD4AA216BC0D100A4A688 /* TimerModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		3B9C67D72162808D00254F3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B9C67DA2162808D00254F3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B9C67DC2162808D00254F3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BBC0AD7217799AA008A90E2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3BCCD4AA216BC0D100A4A688 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,7 @@
 				3B9C67D92162808D00254F3B /* LaunchScreen.storyboard */,
 				3B9C67DC2162808D00254F3B /* Info.plist */,
 				3BCCD4AA216BC0D100A4A688 /* TimerModel.swift */,
+				3BBC0AD7217799AA008A90E2 /* SettingsViewController.swift */,
 			);
 			path = StopWatch;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				3BCCD4AB216BC0D100A4A688 /* TimerModel.swift in Sources */,
 				3B9C67D32162808C00254F3B /* ViewController.swift in Sources */,
 				3B9C67D12162808C00254F3B /* AppDelegate.swift in Sources */,
+				3BBC0AD8217799AA008A90E2 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

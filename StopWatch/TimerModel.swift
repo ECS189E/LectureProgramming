@@ -42,6 +42,7 @@ class TimerModel {
         let baseTime = self.lapTime ?? startTime
         let interval = now.timeIntervalSince(baseTime)
         self.laps.append(interval)
+        self.lapTime = now
         
         // we'll talk about this in detail later
         DispatchQueue.main.async {
