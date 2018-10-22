@@ -32,14 +32,16 @@ class ViewController: UIViewController, UpdateTime, UITableViewDataSource, UITab
         self.tableView.reloadData()
     }
     
-
-    struct LapDisplay {
-        let lapNumber: Int
-        let lapTime: TimeInterval
-    }
-    
     @IBOutlet weak var timeDisplayLabel: UILabel!
     var laps: [LapDisplay]?
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "lapDetailsViewController") as! LapDetailsViewController
+        viewController.lap = self.laps.map { $0[indexPath.row] }
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // by default there is one section for each tableview
@@ -88,7 +90,6 @@ class ViewController: UIViewController, UpdateTime, UITableViewDataSource, UITab
         // set the delegate by setting a variable on the viewcontroller
         viewController.delegate = self
         self.present(viewController, animated: true)
-        self.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
     }
     func toggleButton(withTitles titles: (String, String), on button: UIButton) {
         let title = button.currentTitle == titles.0 ? titles.1 : titles.0

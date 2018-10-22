@@ -14,6 +14,8 @@
 		3B9C67DB2162808D00254F3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B9C67D92162808D00254F3B /* LaunchScreen.storyboard */; };
 		3BBC0AD8217799AA008A90E2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBC0AD7217799AA008A90E2 /* SettingsViewController.swift */; };
 		3BCCD4AB216BC0D100A4A688 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCCD4AA216BC0D100A4A688 /* TimerModel.swift */; };
+		3BE5F4F5217A42B6006E476E /* LapDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE5F4F4217A42B6006E476E /* LapDetailsViewController.swift */; };
+		3BE5F4F7217A4591006E476E /* LapDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE5F4F6217A4591006E476E /* LapDisplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		3B9C67DC2162808D00254F3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBC0AD7217799AA008A90E2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3BCCD4AA216BC0D100A4A688 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
+		3BE5F4F4217A42B6006E476E /* LapDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapDetailsViewController.swift; sourceTree = "<group>"; };
+		3BE5F4F6217A4591006E476E /* LapDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapDisplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				3B9C67DC2162808D00254F3B /* Info.plist */,
 				3BCCD4AA216BC0D100A4A688 /* TimerModel.swift */,
 				3BBC0AD7217799AA008A90E2 /* SettingsViewController.swift */,
+				3BE5F4F4217A42B6006E476E /* LapDetailsViewController.swift */,
+				3BE5F4F6217A4591006E476E /* LapDisplay.swift */,
 			);
 			path = StopWatch;
 			sourceTree = "<group>";
@@ -141,8 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BE5F4F7217A4591006E476E /* LapDisplay.swift in Sources */,
 				3BCCD4AB216BC0D100A4A688 /* TimerModel.swift in Sources */,
 				3B9C67D32162808C00254F3B /* ViewController.swift in Sources */,
+				3BE5F4F5217A42B6006E476E /* LapDetailsViewController.swift in Sources */,
 				3B9C67D12162808C00254F3B /* AppDelegate.swift in Sources */,
 				3BBC0AD8217799AA008A90E2 /* SettingsViewController.swift in Sources */,
 			);
