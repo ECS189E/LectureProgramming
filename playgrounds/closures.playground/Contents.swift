@@ -23,10 +23,18 @@ reversedNames = names.sorted(by: { s1, s2 in s1 > s2 })
 reversedNames = names.sorted(by: { $0 > $1 })
 
 // operator method
+// static on String:
+// func >(_ a1: String, _a2: String) {
+//   ...
+// }
+func >(_ a1: String, _ a2: String) -> Bool {
+    return !(a1 < a2)
+}
 reversedNames = names.sorted(by: > )
 
 // trailing closures
 reversedNames = names.sorted { $0 > $1 }
 
 print(reversedNames)
+
 
