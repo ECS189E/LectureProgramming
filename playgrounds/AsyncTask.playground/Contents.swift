@@ -59,3 +59,13 @@ class DownloadFilesTask: AsyncTask {
 
 // this is a non blocking call
 let _ = DownloadFilesTask().execute(["a.com", "b.com", "c.com"])
+print("execute returned")
+
+// a correct run of this tasks should print:
+//
+//   execute returned
+//   progress = 0
+//   progress = 33
+//   progress = 66
+//   progress = 100
+//   downloaded 3000 bytes
