@@ -12,12 +12,12 @@ protocol AsyncTask {
 }
 
 extension AsyncTask {
-    func publishProgress(progress: Int) {
-        // implement this function
+    func publish(progress: Int) {
+        // IMPLEMENT THIS
     }
     
     func execute(_ parameters: [String]) {
-        // implement this function
+        // IMPLEMENT THIS
     }
 }
 
@@ -29,11 +29,14 @@ func downloadFile(_ url: String) -> Int {
 
 class DownloadFilesTask: AsyncTask {
     func doInBackground(parameters: [String]) -> Int {
+        if Thread.current == Thread.main {
+            print("ERROR: on main thread")
+        }
         let count = parameters.count
         var totalSize = 0
         for (idx, url) in parameters.enumerated() {
             totalSize += downloadFile(url)
-            publishProgress(progress: (idx / count))
+            publish(progress: (100 * idx / count))
         }
         
         return totalSize
@@ -41,11 +44,18 @@ class DownloadFilesTask: AsyncTask {
     
     func onProgressUpdate(progress: Int) {
         print("progress = \(progress)")
+        if Thread.current != Thread.main {
+            print("ERROR: not on main thread")
+        }
     }
     
     func onPostExecute(result: Int) {
         print("downloaded \(result) bytes")
+        if Thread.current != Thread.main {
+            print("ERROR: not on main thread")
+        }
     }
 }
 
+// this is a non blocking call
 let _ = DownloadFilesTask().execute(["a.com", "b.com", "c.com"])
