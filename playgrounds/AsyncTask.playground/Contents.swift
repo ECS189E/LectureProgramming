@@ -5,7 +5,7 @@ protocol AsyncTask {
     func doInBackground(parameters: [String]) -> Int
     
     // executes in the main dispatch queue, used to show progress
-    func onProgressUpdate(progress: Int)
+    func onUpdate(progress: Int)
     
     // executes in the main disptach queue, used after the background task is done
     func onPostExecute(result: Int)
@@ -42,7 +42,7 @@ class DownloadFilesTask: AsyncTask {
         return totalSize
     }
     
-    func onProgressUpdate(progress: Int) {
+    func onUpdate(progress: Int) {
         print("progress = \(progress)")
         if Thread.current != Thread.main {
             print("ERROR: not on main thread")
