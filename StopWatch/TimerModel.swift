@@ -19,6 +19,8 @@ class TimerModel {
     var timer: Timer?
     var lapTime: Date?
     
+    static var currentTimer: TimerModel?
+    
     var laps: [TimeInterval] = []
     
     init() {

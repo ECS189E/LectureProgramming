@@ -188,3 +188,49 @@ machineLearningQueue.async {
 
 
 // (4) now run recognition in parallel
+let queue = DispatchQueue(label: "Machine Learning")
+queue.async {
+    
+    let dispatchGroup = DispatchGroup()
+    var result: String?
+    print("deadlock example")
+    dispatchGroup.enter()
+    DispatchQueue.global(qos: .userInitiated).async {
+        let foo = "asdf"
+        queue.async {
+            result = foo
+            dispatchGroup.leave()
+        }
+    }
+    
+    dispatchGroup.wait()
+    DispatchQueue.main.async {
+        print(result ?? "none")
+    }
+}
+
+func blockingNetworkRequest(url: String) {
+    print("bnetwork request")
+}
+
+let dictLock = DispatchSemaphore(value: 1)
+var originSemaphores: [String: DispatchSemaphore] = [:]
+
+// make a non blocking HTTP request
+func makeHttpRequest(url: String, origin: String, complete: @escaping (() -> Void)) {
+    dictLock.wait()
+    if originSemaphores[origin] == nil {
+        originSemaphores[origin] = DispatchSemaphore(value: 2)
+    }
+    let semaphore = originSemaphores[origin]!
+    dictLock.signal()
+    
+    DispatchQueue.global(qos: .default).async {
+        semaphore.wait()
+        blockingNetworkRequest(url: url)
+        complete()
+        semaphore.signal()
+    }
+}
+
+
